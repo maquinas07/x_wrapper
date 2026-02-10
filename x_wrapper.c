@@ -23,10 +23,7 @@ int main(int argc, char **argv) {
     return -1;
   }
 
-  if (prctl(PR_CAPBSET_DROP, CAP_SYS_ADMIN, 0, 0, 0) < 0) {
-    perror("prctl_capbset_drop");
-    return -1;
-  }
+  // TODO(elias): Drop capability
 
   ++argv;
   execvp(*argv, argv);
